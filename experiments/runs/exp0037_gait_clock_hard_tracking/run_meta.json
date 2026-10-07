@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0037_gait_clock_hard_tracking",
+  "timesteps": 10000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0037_gait_clock_hard_tracking.yaml",
+  "init_from": "experiments/runs/exp0036_gait_clock_strong_long/best_checkpoint_10M.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-21T15:38:52",
+  "elapsed_seconds": 2140.6874811649323,
+  "finished_at": "2026-09-21T16:14:33"
+}

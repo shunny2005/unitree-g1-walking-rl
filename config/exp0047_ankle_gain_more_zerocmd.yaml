@@ -1,0 +1,77 @@
+# EXP-0047: identical to config/exp0045_ankle_gain.yaml (ankle_pitch/
+# ankle_roll kp 40 -> 60, kd 2 -> 3) except command.zero_command_prob
+# 0.15 -> 0.30. EXP-0045 showed the ankle-gain change partially improves
+# swing duration (right foot) but destabilizes the zero-command fix
+# (F-0005) -- plausibly because the gain change alters the action-to-
+# torque mapping the network's already-learned zero-command behavior
+# depended on, and the fine-tune budget doesn't give it enough exposure to
+# that rare (15% of episodes) input to re-consolidate under the new
+# dynamics. EXP-0042/0043's own history established that more exposure is
+# what makes a rare behavior durable, not a stronger penalty -- this tests
+# the same mechanism directly. See experiments/EXPERIMENT_LOG.md EXP-0047.
+model_path: assets/g1/scene_walk.xml
+
+sim:
+  physics_dt: 0.002
+  control_decimation: 10
+  episode_seconds: 20.0
+
+action:
+  action_scale: 0.25
+
+pd_gains:
+  hip_pitch:   {kp: 100, kd: 2}
+  hip_roll:    {kp: 100, kd: 2}
+  hip_yaw:     {kp: 100, kd: 2}
+  knee:        {kp: 150, kd: 4}
+  ankle_pitch: {kp: 60,  kd: 3}
+  ankle_roll:  {kp: 60,  kd: 3}
+
+command:
+  vx_range: [0.0, 0.6]
+  vy_range: [-0.2, 0.2]
+  zero_command_prob: 0.30
+
+reward_weights:
+  tracking_lin_vel: 1.0
+  tracking_sigma: 0.25
+  alive_bonus: 0.5
+  torque_penalty: 0.0002
+  ang_vel_penalty: 0.1
+  action_rate_penalty: 0.01
+  feet_air_time_bonus: 3.0
+  feet_air_time_threshold_s: 0.2
+  gait_contact_bonus: 1.0
+  feet_swing_height_penalty: 20.0
+  feet_swing_height_target_m: 0.08
+  contact_foot_vel_penalty: 0.2
+  tracking_lin_vel_hard: 2.0
+  tracking_hard_scale: 10.0
+  heading_deviation_penalty: 1.0
+
+gait_clock:
+  enabled: true
+  period_s: 0.8
+  offset: 0.5
+  stance_fraction: 0.55
+
+termination:
+  min_pelvis_height_m: 0.5
+  min_projected_gravity_z: -0.3
+
+ppo:
+  algorithm: PPO
+  policy: MlpPolicy
+  device: cpu
+  learning_rate: 3.0e-4
+  n_steps: 1024
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  policy_net: [256, 256]
+  value_net: [256, 256]

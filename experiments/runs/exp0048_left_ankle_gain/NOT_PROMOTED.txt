@@ -1,0 +1,1 @@
+not promoted -- see experiments/EXPERIMENT_LOG.md EXP-0048. Confirmed the left-foot ceiling is control-rate-limited (moved 140->180ms) but severe yaw/tracking regression (yaw 20-28 vs 10.8 deg/10s soft gate, dist_ratio 0.81-0.85 vs 0.94 hard gate) makes this checkpoint unusable.

@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0035_gait_clock_strong",
+  "timesteps": 10000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0035_gait_clock_strong.yaml",
+  "init_from": "experiments/runs/exp0026_air_time_on_exp0023_long/best_checkpoint_2M.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": true,
+  "reward_schedule": null,
+  "started_at": "2026-09-21T11:31:49",
+  "elapsed_seconds": 1422.4086651802063,
+  "finished_at": "2026-09-21T11:55:31"
+}

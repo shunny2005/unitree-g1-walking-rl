@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0038_clock_heading",
+  "timesteps": 6000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0038_clock_heading.yaml",
+  "init_from": "experiments/runs/exp0037_gait_clock_hard_tracking/best_checkpoint_10M.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-21T17:22:16",
+  "elapsed_seconds": 1978.1548388004303,
+  "finished_at": "2026-09-21T17:55:15"
+}

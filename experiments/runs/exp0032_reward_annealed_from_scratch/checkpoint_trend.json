@@ -1,0 +1,26 @@
+{
+  "3999996": {
+    "mean_len_s": 19.992,
+    "mean_dist_ratio_reliable": 0.35664936859678664,
+    "n_reliable": 20,
+    "falls": 1,
+    "n_episodes": 20,
+    "mean_abs_yaw_drift_per_10s_deg": 17.634737957889822
+  },
+  "7999992": {
+    "mean_len_s": 20.0,
+    "mean_dist_ratio_reliable": 0.32406279456071385,
+    "n_reliable": 20,
+    "falls": 0,
+    "n_episodes": 20,
+    "mean_abs_yaw_drift_per_10s_deg": 19.492717991847123
+  },
+  "11999988": {
+    "mean_len_s": 18.895,
+    "mean_dist_ratio_reliable": 0.3328295309314628,
+    "n_reliable": 19,
+    "falls": 2,
+    "n_episodes": 20,
+    "mean_abs_yaw_drift_per_10s_deg": 29.533097453100293
+  }
+}

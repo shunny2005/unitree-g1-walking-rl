@@ -1,0 +1,1 @@
+not promoted -- see experiments/EXPERIMENT_LOG.md EXP-0045. 3M checkpoint (ppo_g1_walk_2999988_steps.zip) is the closest candidate but fails the zero-command hard gate (8.1 vs 5.1 deg/20s).

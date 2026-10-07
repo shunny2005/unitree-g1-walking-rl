@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0042_zero_command_training",
+  "timesteps": 6000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0042_zero_command_training.yaml",
+  "init_from": "experiments/runs/exp0041_zero_command_heading/best_checkpoint_1M.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-22T14:34:03",
+  "elapsed_seconds": 849.3619120121002,
+  "finished_at": "2026-09-22T14:48:12"
+}

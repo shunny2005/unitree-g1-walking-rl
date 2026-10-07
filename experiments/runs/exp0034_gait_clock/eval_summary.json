@@ -1,0 +1,418 @@
+{
+  "summary": {
+    "n_episodes": 20,
+    "mean_episode_length_steps": 1000.0,
+    "mean_episode_length_s": 20.0,
+    "mean_total_reward": 1537.2797404390815,
+    "mean_vel_error": 0.030273145245724442,
+    "mean_distance_traveled_m": 4.147097139421158,
+    "mean_distance_ratio_reliable_only": 0.8749779856327248,
+    "n_reliable_ratio_episodes": 20,
+    "mean_abs_yaw_drift_per_10s_deg": 23.22071020421656,
+    "termination_reasons": {
+      "null": 20
+    }
+  },
+  "episodes": [
+    {
+      "seed": 1000,
+      "command": [
+        0.31283143162727356,
+        0.041536737233400345
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1524.0336847649423,
+      "mean_vel_error": 0.021621742934922063,
+      "mean_torque_cost": 0.03976833271950421,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7814334550017616,
+      "distance_traveled_m": 6.313530926956336,
+      "expected_distance_m": 6.3115386962890625,
+      "distance_ratio": 1.0003156489666212,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 19.84970011484186,
+      "yaw_drift_per_10s_deg": 9.92485005742093
+    },
+    {
+      "seed": 1001,
+      "command": [
+        0.36755695939064026,
+        -0.19371981918811798
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1483.2117086068977,
+      "mean_vel_error": 0.026234177376543676,
+      "mean_torque_cost": 0.04996624087175507,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7795775811408852,
+      "distance_traveled_m": 7.792786127977634,
+      "expected_distance_m": 8.30964469909668,
+      "distance_ratio": 0.9378001599544645,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 73.4679070938847,
+      "yaw_drift_per_10s_deg": 36.73395354694235
+    },
+    {
+      "seed": 1002,
+      "command": [
+        0.22849269211292267,
+        -0.057124264538288116
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1553.0341745163273,
+      "mean_vel_error": 0.025187377557285683,
+      "mean_torque_cost": 0.036759524607970065,
+      "termination_reason": null,
+      "final_pelvis_height": 0.78274853101325,
+      "distance_traveled_m": 4.368427057914537,
+      "expected_distance_m": 4.710502624511719,
+      "distance_ratio": 0.9273802407375495,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 32.52481616052944,
+      "yaw_drift_per_10s_deg": 16.26240808026472
+    },
+    {
+      "seed": 1003,
+      "command": [
+        0.1126544177532196,
+        -0.09731767326593399
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1560.1249707976128,
+      "mean_vel_error": 0.030263435819137163,
+      "mean_torque_cost": 0.042206296709650225,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7857362162718607,
+      "distance_traveled_m": 2.4943694233511784,
+      "expected_distance_m": 2.9773645401000977,
+      "distance_ratio": 0.8377776351387992,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -19.080293957290042,
+      "yaw_drift_per_10s_deg": -9.540146978645021
+    },
+    {
+      "seed": 1004,
+      "command": [
+        0.0005282716592773795,
+        -0.14793947339057922
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1553.4426055811737,
+      "mean_vel_error": 0.05899745737171819,
+      "mean_torque_cost": 0.0465751125912833,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7839143614523689,
+      "distance_traveled_m": 1.911416108774646,
+      "expected_distance_m": 2.958808183670044,
+      "distance_ratio": 0.6460087947991834,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -65.81520518262238,
+      "yaw_drift_per_10s_deg": -32.90760259131119
+    },
+    {
+      "seed": 1005,
+      "command": [
+        0.049331504851579666,
+        0.17222481966018677
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1523.4569584699216,
+      "mean_vel_error": 0.03556771910696168,
+      "mean_torque_cost": 0.04245861650904433,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7809282074632515,
+      "distance_traveled_m": 3.5266504287671516,
+      "expected_distance_m": 3.583014726638794,
+      "distance_ratio": 0.9842690298053792,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -17.74698281214923,
+      "yaw_drift_per_10s_deg": -8.873491406074615
+    },
+    {
+      "seed": 1006,
+      "command": [
+        0.20215286314487457,
+        0.040342777967453
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1544.4328601011518,
+      "mean_vel_error": 0.03164923700745453,
+      "mean_torque_cost": 0.03668482643788624,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7782903341467436,
+      "distance_traveled_m": 3.1623480974266585,
+      "expected_distance_m": 4.122781753540039,
+      "distance_ratio": 0.7670423239627707,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 104.3221067675326,
+      "yaw_drift_per_10s_deg": 52.1610533837663
+    },
+    {
+      "seed": 1007,
+      "command": [
+        0.042734961956739426,
+        0.12639214098453522
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1559.1923175454376,
+      "mean_vel_error": 0.031419103911865386,
+      "mean_torque_cost": 0.04145788802509206,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7797890971951531,
+      "distance_traveled_m": 2.406338918089535,
+      "expected_distance_m": 2.668426513671875,
+      "distance_ratio": 0.9017819699214067,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 7.3853038340992905,
+      "yaw_drift_per_10s_deg": 3.6926519170496452
+    },
+    {
+      "seed": 1008,
+      "command": [
+        0.10035164654254913,
+        0.12522029876708984
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1537.4498491125942,
+      "mean_vel_error": 0.024710330420629995,
+      "mean_torque_cost": 0.04092432299818028,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7806835804567888,
+      "distance_traveled_m": 3.2652339319106116,
+      "expected_distance_m": 3.209397077560425,
+      "distance_ratio": 1.017397926464316,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 1.3387757848198307,
+      "yaw_drift_per_10s_deg": 0.6693878924099153
+    },
+    {
+      "seed": 1009,
+      "command": [
+        0.03390027582645416,
+        -0.06923376768827438
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1621.3664334497362,
+      "mean_vel_error": 0.029832682547092825,
+      "mean_torque_cost": 0.04101321416761405,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7814846320925052,
+      "distance_traveled_m": 1.22966070757266,
+      "expected_distance_m": 1.5417579412460327,
+      "distance_ratio": 0.7975705359940362,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -29.51644275632902,
+      "yaw_drift_per_10s_deg": -14.75822137816451
+    },
+    {
+      "seed": 1010,
+      "command": [
+        0.056995369493961334,
+        0.014322292059659958
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1603.7898601450172,
+      "mean_vel_error": 0.023401295673703363,
+      "mean_torque_cost": 0.03430413757195234,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7762633890500691,
+      "distance_traveled_m": 1.0336873062292065,
+      "expected_distance_m": 1.1753467321395874,
+      "distance_ratio": 0.8794743525151035,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -2.6042292257304487,
+      "yaw_drift_per_10s_deg": -1.3021146128652243
+    },
+    {
+      "seed": 1011,
+      "command": [
+        0.17047490179538727,
+        0.025329414755105972
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1562.252627126317,
+      "mean_vel_error": 0.03864373245631745,
+      "mean_torque_cost": 0.034749275987722206,
+      "termination_reason": null,
+      "final_pelvis_height": 0.783166956134147,
+      "distance_traveled_m": 2.737911547965286,
+      "expected_distance_m": 3.446927309036255,
+      "distance_ratio": 0.7943049860052875,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 54.584981776539394,
+      "yaw_drift_per_10s_deg": 27.292490888269697
+    },
+    {
+      "seed": 1012,
+      "command": [
+        0.18379229307174683,
+        0.1122586727142334
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1529.2703749316763,
+      "mean_vel_error": 0.026106430959651903,
+      "mean_torque_cost": 0.03718703262242739,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7829863770216623,
+      "distance_traveled_m": 4.070586217303974,
+      "expected_distance_m": 4.307278156280518,
+      "distance_ratio": 0.9450483738480139,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 18.33710759223215,
+      "yaw_drift_per_10s_deg": 9.168553796116075
+    },
+    {
+      "seed": 1013,
+      "command": [
+        0.4766957461833954,
+        -0.16840821504592896
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1451.3194027153684,
+      "mean_vel_error": 0.026702256432189236,
+      "mean_torque_cost": 0.05559083969443773,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7788278059916073,
+      "distance_traveled_m": 8.49059546767334,
+      "expected_distance_m": 10.111382484436035,
+      "distance_ratio": 0.8397066850890574,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 105.41211379891455,
+      "yaw_drift_per_10s_deg": 52.706056899457266
+    },
+    {
+      "seed": 1014,
+      "command": [
+        0.26131439208984375,
+        0.0342809222638607
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1528.7281171807929,
+      "mean_vel_error": 0.02905751151318795,
+      "mean_torque_cost": 0.03821323358052602,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7838281851719467,
+      "distance_traveled_m": 4.76159504553095,
+      "expected_distance_m": 5.271068096160889,
+      "distance_ratio": 0.9033453862982711,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 45.22647193402477,
+      "yaw_drift_per_10s_deg": 22.613235967012386
+    },
+    {
+      "seed": 1015,
+      "command": [
+        0.21594175696372986,
+        0.04282713308930397
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1542.219373609677,
+      "mean_vel_error": 0.029153404979460763,
+      "mean_torque_cost": 0.03719712474677037,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7806892081183684,
+      "distance_traveled_m": 3.652209312986891,
+      "expected_distance_m": 4.4029541015625,
+      "distance_ratio": 0.8294906621195102,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 85.28425309667884,
+      "yaw_drift_per_10s_deg": 42.64212654833942
+    },
+    {
+      "seed": 1016,
+      "command": [
+        0.13679495453834534,
+        -0.02292240411043167
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1569.1236838173666,
+      "mean_vel_error": 0.03204913681594991,
+      "mean_torque_cost": 0.03385528699782553,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7817181981099431,
+      "distance_traveled_m": 2.16833877711388,
+      "expected_distance_m": 2.774043560028076,
+      "distance_ratio": 0.781652749927234,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -66.3835116918849,
+      "yaw_drift_per_10s_deg": -33.19175584594245
+    },
+    {
+      "seed": 1017,
+      "command": [
+        0.5510110259056091,
+        0.1285327523946762
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1423.8002412531982,
+      "mean_vel_error": 0.03335200750669576,
+      "mean_torque_cost": 0.062119348243928896,
+      "termination_reason": null,
+      "final_pelvis_height": 0.779453849696999,
+      "distance_traveled_m": 10.562442184648983,
+      "expected_distance_m": 11.316073417663574,
+      "distance_ratio": 0.9334017017035054,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -54.72809737626246,
+      "yaw_drift_per_10s_deg": -27.36404868813123
+    },
+    {
+      "seed": 1018,
+      "command": [
+        0.3563852608203888,
+        -0.01801637001335621
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1511.5437692934147,
+      "mean_vel_error": 0.022550291545173528,
+      "mean_torque_cost": 0.04054011424520506,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7839794611396468,
+      "distance_traveled_m": 6.710407165991923,
+      "expected_distance_m": 7.136807441711426,
+      "distance_ratio": 0.9402533584936894,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": 50.30364333683599,
+      "yaw_drift_per_10s_deg": 25.151821668417995
+    },
+    {
+      "seed": 1019,
+      "command": [
+        0.13015611469745636,
+        -0.04160198196768761
+      ],
+      "episode_length_s": 20.0,
+      "episode_steps": 1000,
+      "total_reward": 1563.801795763008,
+      "mean_vel_error": 0.028963572978547795,
+      "mean_torque_cost": 0.034610202220973094,
+      "termination_reason": null,
+      "final_pelvis_height": 0.7829553063440173,
+      "distance_traveled_m": 2.2834080342377794,
+      "expected_distance_m": 2.7328622341156006,
+      "distance_ratio": 0.8355371909102941,
+      "distance_ratio_reliable": true,
+      "yaw_drift_deg": -74.91646387546055,
+      "yaw_drift_per_10s_deg": -37.458231937730275
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+# EXP-0049: identical to config/exp0048_left_ankle_gain.yaml except the left
+# ankle's kp is halved back toward the canonical's symmetric value: 90 -> 75
+# (halfway between the canonical's 60 and EXP-0048's 90), kd 4.5 -> 3.75
+# proportionally. EXP-0048 confirmed the left foot's swing-duration ceiling
+# is control-rate-limited (moved 140->180ms) but caused severe heading-
+# control regression (yaw 20-28 vs the 10.8 deg/10s soft gate) at kp=90.
+# This tests whether that cost scales smoothly with the gain step (a
+# graded, partially-usable middle ground might exist at kp=75) or is a
+# step-function threshold effect (a smaller step would then show
+# proportionally smaller swing-duration gain AND proportionally smaller
+# heading cost, or the heading cost might persist even at this smaller
+# step, which would argue for recalibrating the heading reward terms
+# directly rather than searching for a "safe" gain value).
+# See experiments/EXPERIMENT_LOG.md EXP-0049 for the full pre-registration.
+model_path: assets/g1/scene_walk.xml
+
+sim:
+  physics_dt: 0.002
+  control_decimation: 10
+  episode_seconds: 20.0
+
+action:
+  action_scale: 0.25
+
+pd_gains:
+  hip_pitch:   {kp: 100, kd: 2}
+  hip_roll:    {kp: 100, kd: 2}
+  hip_yaw:     {kp: 100, kd: 2}
+  knee:        {kp: 150, kd: 4}
+  ankle_pitch: {kp: 60,  kd: 3}
+  ankle_roll:  {kp: 60,  kd: 3}
+
+pd_gains_left:
+  hip_pitch:   {kp: 100, kd: 2}
+  hip_roll:    {kp: 100, kd: 2}
+  hip_yaw:     {kp: 100, kd: 2}
+  knee:        {kp: 150, kd: 4}
+  ankle_pitch: {kp: 75,  kd: 3.75}
+  ankle_roll:  {kp: 75,  kd: 3.75}
+
+command:
+  vx_range: [0.0, 0.6]
+  vy_range: [-0.2, 0.2]
+  zero_command_prob: 0.30
+
+reward_weights:
+  tracking_lin_vel: 1.0
+  tracking_sigma: 0.25
+  alive_bonus: 0.5
+  torque_penalty: 0.0002
+  ang_vel_penalty: 0.1
+  action_rate_penalty: 0.01
+  feet_air_time_bonus: 3.0
+  feet_air_time_threshold_s: 0.2
+  gait_contact_bonus: 1.0
+  feet_swing_height_penalty: 20.0
+  feet_swing_height_target_m: 0.08
+  contact_foot_vel_penalty: 0.2
+  tracking_lin_vel_hard: 2.0
+  tracking_hard_scale: 10.0
+  heading_deviation_penalty: 1.0
+
+gait_clock:
+  enabled: true
+  period_s: 0.8
+  offset: 0.5
+  stance_fraction: 0.55
+
+termination:
+  min_pelvis_height_m: 0.5
+  min_projected_gravity_z: -0.3
+
+ppo:
+  algorithm: PPO
+  policy: MlpPolicy
+  device: cpu
+  learning_rate: 3.0e-4
+  n_steps: 1024
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  policy_net: [256, 256]
+  value_net: [256, 256]

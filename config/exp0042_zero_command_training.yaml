@@ -1,0 +1,78 @@
+# EXP-0042: identical to config/exp0041_zero_command_heading.yaml except
+# command.zero_command_prob 0.0 -> 0.15. ADR-017 found exp0041's fix (a
+# heavier heading_deviation_penalty alone) is NOT durable: the zero-command
+# spin regrows from 9.7 to 19.9 deg/20s over 1M->6M steps of further
+# fine-tuning, because a continuous-uniform command sampler puts ~0
+# probability mass on exactly (0,0), so nothing in training ever reinforces
+# good zero-command behavior even though the penalty exists. This config
+# mixes in an exact (0,0) command 15% of episodes (envs/reset.sample_command)
+# so the zero-command case is directly represented in the training
+# distribution, not just penalized in the abstract. heading_deviation_penalty
+# stays at 1.0 (unchanged from exp0041) -- this is an orthogonal, additive
+# change to command sampling, not a reward reweighting.
+model_path: assets/g1/scene_walk.xml
+
+sim:
+  physics_dt: 0.002
+  control_decimation: 10
+  episode_seconds: 20.0
+
+action:
+  action_scale: 0.25
+
+pd_gains:
+  hip_pitch:   {kp: 100, kd: 2}
+  hip_roll:    {kp: 100, kd: 2}
+  hip_yaw:     {kp: 100, kd: 2}
+  knee:        {kp: 150, kd: 4}
+  ankle_pitch: {kp: 40,  kd: 2}
+  ankle_roll:  {kp: 40,  kd: 2}
+
+command:
+  vx_range: [0.0, 0.6]
+  vy_range: [-0.2, 0.2]
+  zero_command_prob: 0.15
+
+reward_weights:
+  tracking_lin_vel: 1.0
+  tracking_sigma: 0.25
+  alive_bonus: 0.5
+  torque_penalty: 0.0002
+  ang_vel_penalty: 0.1
+  action_rate_penalty: 0.01
+  feet_air_time_bonus: 3.0
+  feet_air_time_threshold_s: 0.2
+  gait_contact_bonus: 1.0
+  feet_swing_height_penalty: 20.0
+  feet_swing_height_target_m: 0.08
+  contact_foot_vel_penalty: 0.2
+  tracking_lin_vel_hard: 2.0
+  tracking_hard_scale: 10.0
+  heading_deviation_penalty: 1.0
+
+gait_clock:
+  enabled: true
+  period_s: 0.8
+  offset: 0.5
+  stance_fraction: 0.55
+
+termination:
+  min_pelvis_height_m: 0.5
+  min_projected_gravity_z: -0.3
+
+ppo:
+  algorithm: PPO
+  policy: MlpPolicy
+  device: cpu
+  learning_rate: 3.0e-4
+  n_steps: 1024
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  policy_net: [256, 256]
+  value_net: [256, 256]

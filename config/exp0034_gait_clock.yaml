@@ -1,0 +1,78 @@
+# EXP-0034: the canonical reward (config/exp0012_air_time.yaml, unchanged)
+# plus the gait-clock recipe from R-0004 (docs/RESEARCH_LOG.md), read
+# verbatim from the official Unitree G1 environment:
+#   - gait_clock: sin/cos of a 0.8 s phase appended to the observation
+#     (46 inputs), right leg half a cycle behind, stance while phase < 0.55
+#   - gait_contact_bonus 0.18: + per foot whose contact matches the schedule
+#   - feet_swing_height_penalty 20, target 0.08 m: airborne feet pulled
+#     toward 8 cm (ankle-link z; the canonical peaks at 5.7 cm, rests at 3.4 cm)
+#   - contact_foot_vel_penalty 0.2: grounded feet pay for sliding (anti-skating)
+# Weights are the reference's, checked against the canonical gait's own
+# measured per-step size (EXP-0034 calibration): the clock term is about
+# chance (+1.07 of 2.0 at weight 1) so 0.18 is worth about +-0.17/step, the
+# swing term is negligible at weight 1 (-0.0004) so 20 gives -0.008/step,
+# and the velocity term is -0.16 at weight 1 so 0.2 gives -0.032/step (2.4%
+# of the 1.32/step reward). None dominates. feet_air_time_bonus is kept at
+# the canonical 3.0 (the reference sets it to 0) so this is one change.
+model_path: assets/g1/scene_walk.xml
+
+sim:
+  physics_dt: 0.002
+  control_decimation: 10
+  episode_seconds: 20.0
+
+action:
+  action_scale: 0.25
+
+pd_gains:
+  hip_pitch:   {kp: 100, kd: 2}
+  hip_roll:    {kp: 100, kd: 2}
+  hip_yaw:     {kp: 100, kd: 2}
+  knee:        {kp: 150, kd: 4}
+  ankle_pitch: {kp: 40,  kd: 2}
+  ankle_roll:  {kp: 40,  kd: 2}
+
+command:
+  vx_range: [0.0, 0.6]
+  vy_range: [-0.2, 0.2]
+
+reward_weights:
+  tracking_lin_vel: 1.0
+  tracking_sigma: 0.25
+  alive_bonus: 0.5
+  torque_penalty: 0.0002
+  ang_vel_penalty: 0.1
+  action_rate_penalty: 0.01
+  feet_air_time_bonus: 3.0
+  feet_air_time_threshold_s: 0.2
+  gait_contact_bonus: 0.18
+  feet_swing_height_penalty: 20.0
+  feet_swing_height_target_m: 0.08
+  contact_foot_vel_penalty: 0.2
+
+gait_clock:
+  enabled: true
+  period_s: 0.8
+  offset: 0.5
+  stance_fraction: 0.55
+
+termination:
+  min_pelvis_height_m: 0.5
+  min_projected_gravity_z: -0.3
+
+ppo:
+  algorithm: PPO
+  policy: MlpPolicy
+  device: cpu
+  learning_rate: 3.0e-4
+  n_steps: 1024
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  policy_net: [256, 256]
+  value_net: [256, 256]

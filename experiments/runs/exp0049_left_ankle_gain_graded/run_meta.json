@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0049_left_ankle_gain_graded",
+  "timesteps": 4000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0049_left_ankle_gain_graded.yaml",
+  "init_from": "experiments/runs/exp0047_ankle_gain_more_zerocmd/best_checkpoint_4M.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-24T01:26:33",
+  "elapsed_seconds": 589.6032319068909,
+  "finished_at": "2026-09-24T01:36:23"
+}

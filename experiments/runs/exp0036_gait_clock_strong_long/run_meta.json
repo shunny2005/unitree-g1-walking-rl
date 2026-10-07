@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0036_gait_clock_strong_long",
+  "timesteps": 10000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0035_gait_clock_strong.yaml",
+  "init_from": "experiments/runs/exp0035_gait_clock_strong/final_model.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-21T11:59:26",
+  "elapsed_seconds": 2442.8904941082,
+  "finished_at": "2026-09-21T12:40:09"
+}

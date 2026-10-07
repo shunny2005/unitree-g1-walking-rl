@@ -1,0 +1,15 @@
+{
+  "run_name": "exp0043_zero_command_durability_check",
+  "timesteps": 6000000,
+  "n_envs": 12,
+  "seed": 0,
+  "subproc": true,
+  "config_path": "config/exp0042_zero_command_training.yaml",
+  "init_from": "experiments/runs/exp0042_zero_command_training/checkpoints/ppo_g1_walk_5999976_steps.zip",
+  "init_learning_rate": 1e-05,
+  "expand_obs": false,
+  "reward_schedule": null,
+  "started_at": "2026-09-22T23:12:07",
+  "elapsed_seconds": 5348.86038517952,
+  "finished_at": "2026-09-23T00:41:16"
+}

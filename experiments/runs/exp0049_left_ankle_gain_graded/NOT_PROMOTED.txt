@@ -1,0 +1,1 @@
+not promoted -- see experiments/EXPERIMENT_LOG.md EXP-0049. Swing-duration benefit vanished at this smaller gain step (heading cost scaled down but the swing gain did not scale down proportionally -- it disappeared).

@@ -1,0 +1,1 @@
+not promoted -- see experiments/EXPERIMENT_LOG.md EXP-0046. Swing duration did not meaningfully increase on either foot at any checkpoint; zero-command drift stayed stable (confirms EXP-0045's destabilization was control-mechanics-specific, not a generic risk).

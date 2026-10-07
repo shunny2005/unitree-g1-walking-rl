@@ -1,0 +1,46 @@
+{
+  "all": {
+    "n": 100,
+    "falls": 3,
+    "dist_ratio": 0.9032751829799646,
+    "vel_err": 0.036920215823641266,
+    "vel_avg_err": 0.0224075199376324,
+    "vel_ripple": 0.032100976204672636,
+    "abs_yaw_per_10s_deg": 30.550885872780754,
+    "straightness": 0.9019633708422877,
+    "clock_adherence": NaN
+  },
+  "<0.15": {
+    "n": 14,
+    "falls": 1,
+    "dist_ratio": 0.9113291543087509,
+    "vel_err": 0.0445980862131115,
+    "vel_avg_err": 0.03127623118165122,
+    "vel_ripple": 0.046127939426877984,
+    "abs_yaw_per_10s_deg": 14.553166117470752,
+    "straightness": 0.9220957070325785,
+    "clock_adherence": NaN
+  },
+  "0.15-0.4": {
+    "n": 49,
+    "falls": 2,
+    "dist_ratio": 0.9319648990472591,
+    "vel_err": 0.03849600696998565,
+    "vel_avg_err": 0.024372706387840486,
+    "vel_ripple": 0.03447635950769003,
+    "abs_yaw_per_10s_deg": 26.557680436434126,
+    "straightness": 0.9223307294424672,
+    "clock_adherence": NaN
+  },
+  ">=0.4": {
+    "n": 37,
+    "falls": 0,
+    "dist_ratio": 0.8640017158870705,
+    "vel_err": 0.03192821713111537,
+    "vel_avg_err": 0.01644924714097133,
+    "vel_ripple": 0.023647698719301637,
+    "abs_yaw_per_10s_deg": 41.89237622292469,
+    "straightness": 0.8673727417051837,
+    "clock_adherence": NaN
+  }
+}
